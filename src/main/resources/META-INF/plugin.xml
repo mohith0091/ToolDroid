@@ -1,0 +1,98 @@
+<idea-plugin>
+    <id>org.example.MyPlugin</id>
+    <name>ToolDroid</name>
+    <vendor>Mohith</vendor>
+
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action
+                id="adb_devices"
+                class="com.mohith.actions.adb.AdbDevicesAction"
+                text="Devices">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta alt D"/>
+        </action>
+        <action
+                id="adb_reboot"
+                class="com.mohith.actions.adb.AdbReboot"
+                text="Reboot">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta alt R"/>
+        </action>
+        <action
+                id="adb_fastboot"
+                class="com.mohith.actions.adb.AdbFastBootMode"
+                text="Fastboot Mode">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta alt F"/>
+        </action>
+        <action
+                id="adb_recovery"
+                class="com.mohith.actions.adb.AdbRecoveryMode"
+                text="Recovery Mode">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta alt T"/>
+        </action>
+        <action
+                id="adb_edl"
+                class="com.mohith.actions.adb.AdbEdlMode"
+                text="EDL Mode">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta alt E"/>
+        </action>
+        <action
+                id="adb_layout_bound_on"
+                class="com.mohith.actions.adb.AdbLayoutBoundsON"
+                text="ON - Layout Bounds">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta alt 1"/>
+        </action>
+        <action
+                id="adb_layout_bound_off"
+                class="com.mohith.actions.adb.AdbLayoutBoundsOff"
+                text="OFF - Layout Bounds">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta alt 2"/>
+        </action>
+
+        <action
+                id="scrcpy_start"
+                class="com.mohith.actions.scrcpy.StartScrcpyAction"
+                text="Scrcpy Start">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta alt S"/>
+        </action>
+
+        <group id="MyPlugin.TopMenu"
+               text="ToolDroid"
+               description="My plugin">
+            <reference ref="scrcpy_start"/>
+            <separator/>
+            <action id="com.mohith.actions.adb.AdbDevicesAction" class="com.mohith.actions.AboutThisTool"
+                    text="About This Tool"
+                    description="Description">
+            </action>
+            <add-to-group group-id="MainMenu" anchor="last"/>
+        </group>
+
+        <group
+                id="adb_group"
+                text="ADB Tools"
+                popup="true"
+                description="adb Description">
+            <add-to-group group-id="MyPlugin.TopMenu"  anchor="first"/>
+            <reference ref="adb_devices"/>
+            <separator/>
+            <reference ref="adb_reboot"/>
+            <reference ref="adb_fastboot"/>
+            <reference ref="adb_recovery"/>
+            <reference ref="adb_edl"/>
+            <separator/>
+            <reference ref="adb_layout_bound_on"/>
+            <reference ref="adb_layout_bound_off"/>
+            <separator/>
+        </group>
+    </actions>
+</idea-plugin>
