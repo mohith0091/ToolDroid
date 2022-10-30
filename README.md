@@ -17,4 +17,4 @@
 4. Rebooting the device into Recovery ( Ctrl+Alt+Windows+T )
 5. Rebooting the device into Fastboot or Bootloader ( Ctrl+Alt+Windows+F )
 6. Rebooting the device into EDL ( Ctrl+Alt+Windows+E )
-7. Turing OFF/ON the Layout Bound ( Ctrl+Alt+Windows+D )
+7. Turing OFF/ON the Layout Bound ( Ctrl+Alt+Windows+(1/2) )
