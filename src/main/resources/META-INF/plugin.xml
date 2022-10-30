@@ -1,7 +1,8 @@
 <idea-plugin>
-    <id>org.example.MyPlugin</id>
+    <id>com.mohith.tooldroid</id>
     <name>ToolDroid</name>
     <vendor>Mohith</vendor>
+    <description>This Plugin is mainly for android developers, which has some ADB tools</description>
 
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
