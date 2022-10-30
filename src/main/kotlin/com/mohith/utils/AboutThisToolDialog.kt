@@ -45,15 +45,16 @@ class AboutThisToolDialog(project: Project) : DialogWrapper(project) {
             text("* Rebooting the device into Fastboot or Bootloader")
         }
         row {
+            text("* Rebooting the device into EDL")
+        }
+        row {
             text("* Turing OFF/ON the Layout Bound")
         }
         row {
             browserLink("Progect Link","https://github.com/mohith0091/ToolDroid")
-        }
-        row {
+
             browserLink("Scrcpy Link","https://github.com/Genymobile/scrcpy")
         }
-
 
     }.apply {
         minimumSize = Dimension(500, 350)
